@@ -1,0 +1,30 @@
+<!doctype html>
+<title>Monitoring</title>
+
+<h2>Workers [{{workers|length}}]</h2>
+<table>
+<tr>
+	<td style="width:300px;">IP</td>
+	<td style="width:300px;" align="center">Status</td>
+</tr>
+{% for ip,status in workers %}
+	<tr>
+		<td style="width:300px;">{{ ip }}</td>
+		<td style="width:300px;" align="center">{{status}}</td>
+	</tr>
+{% endfor %}
+</table>
+
+<h2>List [{{mc}}/{{rows|length}}]</h2>
+<table>
+<tr>
+	<td style="width:300px;">Name</td>
+	<td style="width:800px;">Link</td>
+	<td style="text-align:center;" align="center">Status</td>
+</tr>
+{% for name,link,status in rows %}
+	<tr>
+		<td>{{ name }}</td><td>{{link}}</td><td align="center">{{status}}</td>
+	</tr>
+{% endfor %}
+</table>
